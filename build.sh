@@ -1,5 +1,4 @@
 #!/bin/bash
 
-docker build -t jeethu/pypy:2.4.0 .
-cd onbuild
-docker build -t jeethu/pypy:2.4.0-onbuild .
+docker build -f Dockerfile -t jeethu/pypy:2.5.0 .
+docker build -f onbuild/Dockerfile -t jeethu/pypy:2.5.0-onbuild .
