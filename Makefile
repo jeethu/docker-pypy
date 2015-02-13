@@ -6,4 +6,4 @@ ubuntu_docker: Dockerfile
 	docker build -f onbuild/Dockerfile -t jeethu/pypy:2.5.0-onbuild .
 
 debian_container: debian/
-	sudo docker build -f debian/Dockerfile -t jeethu/pypy:2.5.0-debian .
+	docker build -f debian/Dockerfile -t jeethu/pypy:2.5.0-debian .
