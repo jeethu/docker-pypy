@@ -8,9 +8,10 @@ RUN apt-get update && apt-get install -y gcc \
         libc6-dev make bzip2 --no-install-recommends
 
 RUN set -e; \
-    wget https://bitbucket.org/squeaky/portable-pypy/downloads/pypy-2.5-linux_x86_64-portable.tar.bz2 -P /tmp/; \
+    wget -q https://bitbucket.org/squeaky/portable-pypy/downloads/pypy-2.5-linux_x86_64-portable.tar.bz2 -P /tmp/; \
     tar -xjf /tmp/pypy-2.5-linux_x86_64-portable.tar.bz2 -C /usr/local/; \
     ln -s /usr/local/pypy-2.5-linux_x86_64-portable/bin/* /usr/local/bin/; \
-    cp -R /usr/local/pypy-2.5-linux_x86_64-portable/virtualenv_support/ /usr/local/;
+    cp -R /usr/local/pypy-2.5-linux_x86_64-portable/virtualenv_support/ /usr/local/; \
+    rm /tmp/pypy-2.5-linux_x86_64-portable.tar.bz2
 
 CMD ["pypy"]

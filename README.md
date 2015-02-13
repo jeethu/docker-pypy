@@ -26,3 +26,9 @@ Older PyPy 2.4.0 based Dockerfiles are on the [2.4.0](https://github.com/jeethu/
 
 
 Trusted builds are available on the [Docker Hub Registry](https://registry.hub.docker.com/u/jeethu/pypy/).
+
+Credits:
+---
+
+* [Najam Khan](https://github.com/najamkhn)
+	* Contributed a Debian based build

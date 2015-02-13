@@ -16,9 +16,7 @@ RUN set -e; \
     wget --no-check-certificate -qO- 'https://bootstrap.pypa.io/get-pip.py' | pypy; \
     pip install virtualenv; \
     apt-get purge -yq wget python python-minimal python2.7-minimal; \
-    apt-get -yq dist-upgrade; \
     apt-get -yq autoremove; \
-    apt-get -yq clean; \
-    apt-get -yq autoclean
+    apt-get autoclean
 
 CMD ["pypy"]
