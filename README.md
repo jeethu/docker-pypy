@@ -1,12 +1,12 @@
 A Docker image for PyPy 2.5.0
 =============================
 
-A minimal Ubuntu 14.04/Debian (Jessie) based docker image for PyPy 2.5.0. There are also `onbuild` variants for both.
+A minimal Ubuntu 14.04/Debian (Jessie) based docker image for PyPy 2.5.1. There are also `onbuild` variants for both.
 
-- [pypy:2.5.0](https://github.com/jeethu/docker-pypy/blob/master/ubuntu/Dockerfile) __compatible with python-2.7.x__
-- [pypy:2.5.0-onbuild](https://github.com/jeethu/docker-pypy/blob/master/ubuntu/onbuild/Dockerfile) __compatible with python-2.7.x__
-- [pypy:2.5.0-debian](https://github.com/jeethu/docker-pypy/blob/master/debian/Dockerfile) __compatible with python-2.7.x__
-- [pypy:2.5.0-debian-onbuild](https://github.com/jeethu/docker-pypy/blob/master/debian/onbuild/Dockerfile) __compatible with python-2.7.x__
+- [pypy:2.5.1](https://github.com/jeethu/docker-pypy/blob/master/ubuntu/Dockerfile) __compatible with python-2.7.x__
+- [pypy:2.5.1-onbuild](https://github.com/jeethu/docker-pypy/blob/master/ubuntu/onbuild/Dockerfile) __compatible with python-2.7.x__
+- [pypy:2.5.1-debian](https://github.com/jeethu/docker-pypy/blob/master/debian/Dockerfile) __compatible with python-2.7.x__
+- [pypy:2.5.1-debian-onbuild](https://github.com/jeethu/docker-pypy/blob/master/debian/onbuild/Dockerfile) __compatible with python-2.7.x__
 
 Setup:
 ---
@@ -29,8 +29,10 @@ To build everything:
 make
 ```
 
-Older PyPy 2.4.0 based Dockerfiles are on the [2.4.0](https://github.com/jeethu/docker-pypy/tree/2.4.0) branch.
+Older PyPy builds are on the following branches
 
+* [2.5.0](https://github.com/jeethu/docker-pypy/tree/2.5.0)
+* [2.4.0](https://github.com/jeethu/docker-pypy/tree/2.4.0)
 
 Trusted builds are available on the [Docker Hub Registry](https://registry.hub.docker.com/u/jeethu/pypy/).
 
