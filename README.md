@@ -1,4 +1,4 @@
-A Docker image for PyPy 2.5.0
+A Docker image for PyPy 2.5.1
 =============================
 
 A minimal Ubuntu 14.04/Debian (Jessie) based docker image for PyPy 2.5.1. There are also `onbuild` variants for both.
