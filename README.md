@@ -29,6 +29,12 @@ To build everything:
 make
 ```
 
+To run the PyPy shell:
+
+```
+docker run -it --rm jeethu/pypy:2.5.1
+```
+
 Older PyPy builds are on the following branches
 
 * [2.5.0](https://github.com/jeethu/docker-pypy/tree/2.5.0)
