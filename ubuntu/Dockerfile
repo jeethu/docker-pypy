@@ -15,6 +15,12 @@ RUN set -e; \
     apt-get -yq install wget pypy=2.5.1+dfsg-1~ppa1+ubuntu14.04; \
     wget --no-check-certificate -qO- 'https://bootstrap.pypa.io/get-pip.py' | pypy; \
     pip install virtualenv; \
+    cd /tmp/; \
+    wget --no-check-certificate -q https://bitbucket.org/pypy/pypy/downloads/pypy-2.5.1-linux64.tar.bz2; \
+    tar jxf pypy-2.5.1-linux64.tar.bz2; \
+    cp /tmp/pypy-2.5.1-linux64/bin/libpypy-c.so /usr/lib/x86_64-linux-gnu/; \
+    ldconfig; \
+    rm -rf /tmp/pypy*; \
     apt-get purge -yq wget python python-minimal python2.7-minimal; \
     apt-get -yq autoremove; \
     apt-get autoclean
