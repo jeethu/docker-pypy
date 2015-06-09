@@ -6,16 +6,17 @@ ENV LANG C.UTF-8
 ENV DEBIAN_FRONTEND noninteractive
 
 RUN set -e; \
-    umask 0022;echo 'APT::Install-Recommends "0";' | \
-    tee /etc/apt/apt.conf.d/00DisableInstallRecommends; \
-    echo "deb http://ppa.launchpad.net/pypy/ppa/ubuntu trusty main" > /etc/apt/sources.list.d/pypy.list; \
-    echo "deb-src http://ppa.launchpad.net/pypy/ppa/ubuntu trusty main" >> /etc/apt/sources.list.d/pypy.list; \
-    apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 68854915; \
-    apt-get update; \
-    apt-get -yq install wget pypy=2.5.1+dfsg-1~ppa1+ubuntu14.04; \
-    wget --no-check-certificate -qO- 'https://bootstrap.pypa.io/get-pip.py' | pypy; \
-    pip install virtualenv; \
-    apt-get purge -yq wget python python-minimal python2.7-minimal; \
+    umask 0022; \
+    apt-get update; apt-get -yq install wget; \
+    wget -q https://bitbucket.org/squeaky/portable-pypy/downloads/pypy-2.6-linux_x86_64-portable.tar.bz2 -P /tmp/; \
+    tar -xjf /tmp/pypy-2.6-linux_x86_64-portable.tar.bz2 -C /usr/local; \
+    ln -s /usr/local/pypy-2.6-linux_x86_64-portable/bin/libpypy-c.so /usr/lib/x86_64-linux-gnu/; \
+    ldconfig; \
+    wget -qO- 'https://bootstrap.pypa.io/get-pip.py' | /usr/local/pypy-2.6-linux_x86_64-portable/bin/pypy; \
+    /usr/local/pypy-2.6-linux_x86_64-portable/bin/pip install virtualenv; \
+    ln -s /usr/local/pypy-2.6-linux_x86_64-portable/bin/* /usr/local/bin/; \
+    rm /tmp/pypy-2.6-linux_x86_64-portable.tar.bz2; \
+    apt-get purge -yq wget; \
     apt-get -yq autoremove; \
     apt-get autoclean
 

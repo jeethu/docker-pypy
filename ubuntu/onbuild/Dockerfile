@@ -1,4 +1,4 @@
-FROM jeethu/pypy:2.5.1
+FROM jeethu/pypy:2.6.0
 MAINTAINER Jeethu Rao <jeethu@jeethurao.com>
 
 RUN mkdir /usr/src/python
