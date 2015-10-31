@@ -2,8 +2,7 @@
 FROM ubuntu:14.04.2
 MAINTAINER Jeethu Rao <jeethu@jeethurao.com>
 
-ENV LANG C.UTF-8
-ENV DEBIAN_FRONTEND noninteractive
+ENV LANG=C.UTF-8 DEBIAN_FRONTEND=noninteractive
 
 RUN set -e; \
     umask 0022; \
@@ -11,6 +10,7 @@ RUN set -e; \
     wget -q https://bitbucket.org/squeaky/portable-pypy/downloads/pypy-2.6-linux_x86_64-portable.tar.bz2 -P /tmp/; \
     tar -xjf /tmp/pypy-2.6-linux_x86_64-portable.tar.bz2 -C /usr/local; \
     ln -s /usr/local/pypy-2.6-linux_x86_64-portable/bin/libpypy-c.so /usr/lib/x86_64-linux-gnu/; \
+    cp -R /usr/local/pypy-2.6-linux_x86_64-portable/virtualenv_support/ /usr/local/; \
     ldconfig; \
     wget -qO- 'https://bootstrap.pypa.io/get-pip.py' | /usr/local/pypy-2.6-linux_x86_64-portable/bin/pypy; \
     /usr/local/pypy-2.6-linux_x86_64-portable/bin/pip install virtualenv; \
