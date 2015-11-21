@@ -1,6 +1,8 @@
 A Docker image for PyPy 4.0.1
 =============================
 
+[![](https://badge.imagelayers.io/jeethu/pypy:latest.svg)](https://imagelayers.io/?images=jeethu/pypy:latest 'Get your own badge on imagelayers.io')
+
 A minimal Ubuntu 14.04.03/Debian (Jessie) based docker image for PyPy 4.0.1. There are also `onbuild` variants for both.
 
 - [pypy:4.0.1](https://github.com/jeethu/docker-pypy/blob/master/ubuntu/Dockerfile) __compatible with python-2.7.10__
