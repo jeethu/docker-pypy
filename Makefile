@@ -1,4 +1,4 @@
-PYPY_VERSION = 4.0.1
+PYPY_VERSION = 5.0.1
 
 all: ubuntu ubuntu_onbuild debian debian_onbuild
 

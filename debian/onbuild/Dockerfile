@@ -1,4 +1,4 @@
-FROM jeethu/pypy:4.0.1-debian
+FROM jeethu/pypy:5.0.1-debian
 MAINTAINER Jeethu Rao <jeethu@jeethurao.com>
 
 RUN mkdir /usr/src/python
